@@ -1,0 +1,57 @@
+﻿@model FarmCentralWebApp.Models.tblProduct
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Product Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.productType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateRange)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateRange)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.farmerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.farmerName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

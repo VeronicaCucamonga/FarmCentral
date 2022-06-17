@@ -1,0 +1,73 @@
+﻿@model IEnumerable<FarmCentralWebApp.Models.tblProduct>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@*//---------- CODE ATTRIBUTION ----------
+    //Author: ASP.NET MVC
+    //Published Date: 9 March 2017
+    //Title: Searching | Filtering Data in ASP.NET MVC
+    //URL: https://youtu.be/_DqGODw6Htg*@
+
+@using (Html.BeginForm("Index", "Products", FormMethod.Get))
+{
+    @Html.TextBox("searching")
+    <input type="submit" value="search" />
+
+    <p> </p>
+}
+    @*//---------- CODE ATTRIBUTION ENDS ----------*@
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-hover table-responsive">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.productType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateRange)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.farmerName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.productType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateRange)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.farmerName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
